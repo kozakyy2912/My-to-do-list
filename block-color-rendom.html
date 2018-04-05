@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>
+ 
+ </title>
+    <style>
+        div{
+border:1px solid red;
+        width:200px;
+        height:200px;
+        display: inline-block;
+        float:left;}
+    </style>
+
+ </head>
+<body>
+<div id = "a1">
+    </div>
+    <div id = "a2">
+    </div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+ 
+  <script>
+  
+var div = document.getElementsByTagName('div');
+
+for (i = 0;i < div.length;i++){
+    div[i].onclick = function(){
+    for(j=0;j<div.length;j++){
+                    div[j].style.backgroundColor="";
+                    div[j].innerHTML='';
+                }
+          var color = 'rgb(' + Math.round(Math.random() * 256) + ',' + Math.round(Math.random() * 256) + ',' + Math.round(Math.random() * 256);
+        this.style.backgroundColor = color;
+        this.innerHTML=this.style.backgroundColor;
+    }
+}
+
+ </script>
+</body>

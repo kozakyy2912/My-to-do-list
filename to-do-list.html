@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        .header {
+            background: rgba(196, 79, 79, 0.71);
+            text-align: center;
+        }
+        #input {
+            width: 25%;
+            margin: 20px;
+            height: 30px;
+        }
+        #button {
+            width: 100px;
+            height: 30px;
+        }
+        #myUl {
+            list-style-type: none;
+        }
+        li {
+            width: 90%;
+            background: rgba(185, 174, 193, 0.74);
+            transition: 0.5s;
+            position: relative;
+        }
+        li:nth-child(odd){
+            background: rgba(124, 201, 124, 0.8);
+        }
+        li:hover {
+            background: yellow;
+        }
+        span {
+            position: absolute;
+            right: 0;
+            padding-right: 30px;
+            cursor: pointer;
+        }
+        .cheked {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+ 
+  <div class="header">
+      <h1>My to do list</h1>
+      <input id="input" type="text" placeholder="enter text">
+      <button id="button"> add </button>
+  </div>  
+  <ul id="myUl">
+      <li>Some Text</li>
+      <li>Some Text</li>
+      <li>Some Text</li>
+      <li>Some Text</li>
+      <li>Some Text</li>
+  </ul>
+  
+  <script>
+      var li = document.getElementsByTagName('li');
+      for(i=0; i<li.length; i++) {
+          var span = document.createElement('span');
+          span.innerHTML='x';
+          li[i].appendChild(span);
+          li[i].onclick = function(){
+              this.classList.toggle('cheked');
+          }
+      }
+      var span = document.getElementsByTagName('span');
+      for(j=0; j<span.length; j++){
+          span[j].onclick = function(){
+              this.parentElement.style.display = 'none';
+          }
+      }
+      var button = document.getElementById('button');
+      button.onclick = function(){
+          var input = document.getElementById('input');
+          var li = document.createElement('li');
+          li.innerHTML = input.value;
+          var ul = document.getElementById('myUl');
+          ul.appendChild(li);
+          input.value = '';
+          
+          for(i=0; i<li.length; i++) {
+          var span = document.createElement('span');
+          span.innerHTML='x';
+          li[i].appendChild(span);
+          li[i].onclick = function(){
+              this.classList.toggle('cheked');
+          }
+      }
+          var li = document.getElementsByTagName('li');
+      for(i=0; i<li.length; i++) {
+          var span = document.createElement('span');
+          span.innerHTML='x';
+          li[i].appendChild(span);
+          li[i].onclick = function(){
+              this.classList.toggle('cheked');
+          }
+      }
+      var span = document.getElementsByTagName('span');
+          for(j=0; j<span.length; j++){
+              span[j].onclick = function(){
+                  this.parentElement.style.display = 'none';
+              }
+          }   
+      };
+</script>
+</body>
+</html>
